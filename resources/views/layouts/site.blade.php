@@ -10,8 +10,8 @@
 
 <link rel="icon" href="{{ asset('assets/favicon.png') }}" type="image/png">
 <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet" type="text/css">
+<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
 <link href="{{ asset('assets/css/animate.css') }}" rel="stylesheet" type="text/css">
 
 <!--[if lt IE 9]>
