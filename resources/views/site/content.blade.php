@@ -106,28 +106,20 @@
         <!-- Portfolio Filters -->
         <div class="portfolio">
 
-            <div id="filters" class="sixteen columns">
-                <ul class="clearfix">
-                    <li><a id="all" href="#" data-filter="*" class="active">
-                            <h5>All</h5>
-                        </a></li>
-                    <li><a class="" href="#" data-filter=".prototype">
-                            <h5>Prototype</h5>
-                        </a></li>
-                    <li><a class="" href="#" data-filter=".design">
-                            <h5>Design</h5>
-                        </a></li>
-                    <li><a class="" href="#" data-filter=".android">
-                            <h5>Android</h5>
-                        </a></li>
-                    <li><a class="" href="#" data-filter=".appleIOS">
-                            <h5>Apple IOS</h5>
-                        </a></li>
-                    <li><a class="" href="#" data-filter=".web">
-                            <h5>Web App</h5>
-                        </a></li>
-                </ul>
-            </div>
+            @if(isset($tags) && is_object($tags))
+                <div id="filters" class="sixteen columns">
+                    <ul class="clearfix">
+                        <li><a id="all" href="#" data-filter="*" class="active">
+                                <h5>All</h5></a>
+                                @foreach($tags as $tag)
+                                <li><a class="" href="#" data-filter=".{{$tag}}">
+                                    <h5>{{$tag}}</h5>
+                                </a></li>
+                                @endforeach
+                        </li>
+                    </ul>
+                </div>
+            @endif
             <!--/Portfolio Filters -->
 
             <!-- Portfolio Wrapper -->
