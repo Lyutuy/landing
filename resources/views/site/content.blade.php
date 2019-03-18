@@ -124,95 +124,18 @@
 
             <!-- Portfolio Wrapper -->
             <div class="isotope fadeInLeft animated wow" style="position: relative; overflow: hidden; height: 480px;" id="portfolio_wrapper">
-
-                <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   appleIOS isotope-item">
-                    <div class="portfolio_img"> <img src="{{ asset('assets/img/portfolio_pic1.jpg') }}"  alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">SMS Mobile App</h4>
+                @foreach($portfolios as $item)
+                    <!-- Portfolio Item -->
+                        <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   {{ $item->filter }} isotope-item">
+                            <div class="portfolio_img"> {{ Html::image('assets/img/'.$item->images, $item->name) }} </div>
+                            <div class="item_overlay">
+                                <div class="item_info">
+                                    <h4 class="project_name">{{ $item->name }}</h4>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <!--/Portfolio Item -->
-
-                <!-- Portfolio Item-->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-                    <div class="portfolio_img"> <img src="{{ asset('assets/img/portfolio_pic2.jpg') }}" alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">Finance App</h4>
-                        </div>
-                    </div>
-                </div>
-                <!--/Portfolio Item -->
-
-                <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design  isotope-item">
-                    <div class="portfolio_img"> <img src="{{ asset('assets/img/portfolio_pic3.jpg') }}" alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">GPS Concept</h4>
-                        </div>
-                    </div>
-                </div>
-                <!--/Portfolio Item-->
-
-                <!-- Portfolio Item-->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 0px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  android  prototype web isotope-item">
-                    <div class="portfolio_img"> <img src="{{ asset('assets/img/portfolio_pic4.jpg') }}" alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">Shopping</h4>
-                        </div>
-                    </div>
-                </div>
-                <!-- Portfolio Item -->
-
-                <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(0px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design isotope-item">
-                    <div class="portfolio_img"> <img src="{{ asset('assets/img/portfolio_pic5.jpg') }}" alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">Managment</h4>
-                        </div>
-                    </div>
-                </div>
-                <!--/Portfolio Item -->
-
-                <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(337px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  web isotope-item">
-                    <div class="portfolio_img"> <img src="{{ asset('assets/img/portfolio_pic6.jpg') }}" alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">iPhone</h4>
-                        </div>
-                    </div>
-                </div>
-                <!--/Portfolio Item -->
-
-                <!-- Portfolio Item  -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(674px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four  design web isotope-item">
-                    <div class="portfolio_img"> <img src="{{ asset('assets/img/portfolio_pic7.jpg') }}" alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">Nexus Phone</h4>
-                        </div>
-                    </div>
-                </div>
-                <!--/Portfolio Item -->
-
-                <!-- Portfolio Item -->
-                <div style="position: absolute; left: 0px; top: 0px; transform: translate3d(1011px, 240px, 0px) scale3d(1, 1, 1); width: 337px; opacity: 1;" class="portfolio-item one-four   android isotope-item">
-                    <div class="portfolio_img"> <img src="{{ asset('assets/img/portfolio_pic8.jpg') }}" alt="Portfolio 1"> </div>
-                    <div class="item_overlay">
-                        <div class="item_info">
-                            <h4 class="project_name">Android</h4>
-                        </div>
-                    </div>
-                    </a> </div>
-                <!--/Portfolio Item -->
-
+                        <!--/Portfolio Item -->
+                @endforeach
             </div>
             <!--/Portfolio Wrapper -->
 
