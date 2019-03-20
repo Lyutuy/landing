@@ -1,7 +1,15 @@
 <?php
 
 ?>
-
+@if ($errors->all())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
 @if(isset($pages) && is_object($pages))
 
     @foreach($pages as $k => $page)
@@ -166,12 +174,6 @@
                         <div class="team_box wow fadeInDown delay-0{{ $k*3 }}s">
                             <div class="team_box_shadow"><a href="javascript:void(0)"></a></div>
                             {{ Html::image('assets/img/'.$peoples->images, $peoples->name) }}
-                            <ul>
-                                <li><a href="javascript:void(0)" class="fa fa-twitter"></a></li>
-                                <li><a href="javascript:void(0)" class="fa fa-facebook"></a></li>
-                                <li><a href="javascript:void(0)" class="fa fa-pinterest"></a></li>
-                                <li><a href="javascript:void(0)" class="fa fa-google-plus"></a></li>
-                            </ul>
                         </div>
                         <h3 class="wow fadeInDown delay-0{{ $k*3 }}s">{{ $peoples->name }}</h3>
                         <span class="wow fadeInDown delay-0{{ $k*4 }}s">{{ $peoples->position }}</span>
@@ -231,10 +233,15 @@
         </div>
         <div class="col-lg-8 wow fadeInLeft delay-06s">
           <div class="form">
-            <input class="input-text" type="text" name="" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-            <input class="input-text" type="text" name="" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-            <textarea class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
-            <input class="input-btn" type="submit" value="send message">
+
+              <form method="post" action="{{ route('store') }}" >
+                  <input class="input-text" type="text" name="name" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+                  <input class="input-text" type="text" name="email" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
+                  <textarea name="text" class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
+                  <input class="input-btn" type="submit" value="send message">
+                  {{ csrf_field() }}
+              </form>
+
           </div>
         </div>
       </div>
