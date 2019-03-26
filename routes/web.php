@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,17 +13,23 @@
 /*Route::get('/', function () {
     return view('welcome');
 });*/
+/*Route::post('/', function()
+{
+    return "Форма обработана!";
+});*/
+Route::group([], function () {
 
-Route::group(['middleware'=>'web'], function () {
-
-    Route::match(['get','post'], '/', ['uses'=>'IndexController@execute', 'as'=>'home']);
+    Route::get('/', 'IndexController@show')->name('home');
+    Route::post('/store', 'IndexController@store')->name('store');
+    //Route::match(['post','get'], '/', ['uses'=>'IndexController@execute', 'as'=>'/']);
     Route::get('/page/{alias}', ['uses'=>'PageController@execute', 'as'=>'page']);
 
     Route::auth();
 });
 
+
 //admin/service
-Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function () {
+/*Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function () {
 
     //admin
     Route::get('/', function(){
@@ -68,5 +73,5 @@ Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function () {
 
         //admin/edit/{2}
         Route::match(['get', 'post', 'delete'], '/edit/{service}', ['uses'=>'ServicesEditController@execute', 'as'=>'serviceEdit']);
-    });
-});
+    });*/
+//});

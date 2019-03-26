@@ -10,6 +10,11 @@
         </ul>
     </div>
 @endif
+@if(session('status'))
+    <div class="alert alert-success">
+        {{ session('status') }}
+    </div>
+@endif
 @if(isset($pages) && is_object($pages))
 
     @foreach($pages as $k => $page)
@@ -235,9 +240,12 @@
           <div class="form">
 
               <form method="post" action="{{ route('store') }}" >
-                  <input class="input-text" type="text" name="name" value="Your Name *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-                  <input class="input-text" type="text" name="email" value="Your E-mail *" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">
-                  <textarea name="text" class="input-text text-area" cols="0" rows="0" onFocus="if(this.value==this.defaultValue)this.value='';" onBlur="if(this.value=='')this.value=this.defaultValue;">Your Message *</textarea>
+                  <p>Your name *</p>
+                  <input class="input-text" type="text" name="name">
+                  <p>Your email *</p>
+                  <input class="input-text" type="text" name="email">
+                  <p>Your text *</p>
+                  <textarea name="text" class="input-text text-area" cols="0" rows="0"></textarea>
                   <input class="input-btn" type="submit" value="send message">
                   {{ csrf_field() }}
               </form>
