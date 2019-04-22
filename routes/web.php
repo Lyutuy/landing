@@ -29,7 +29,7 @@ Route::group([], function () {
 
 
 //admin/service
-/*Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function () {
+Route::group(['prefix'=>'admin', 'middleware'=>'auth'], function () {
 
     //admin
     Route::get('/', function(){
@@ -73,5 +73,9 @@ Route::group([], function () {
 
         //admin/edit/{2}
         Route::match(['get', 'post', 'delete'], '/edit/{service}', ['uses'=>'ServicesEditController@execute', 'as'=>'serviceEdit']);
-    });*/
-//});
+    });
+});
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
