@@ -23,7 +23,7 @@ Route::group([], function () {
     Route::post('/store', 'IndexController@store')->name('store');
     //Route::match(['post','get'], '/', ['uses'=>'IndexController@execute', 'as'=>'/']);
     Route::get('/page/{alias}', ['uses'=>'PageController@execute', 'as'=>'page']);
-
+    //Route::get('/', 'HomeController@index')->name('home');
     Route::auth();
 });
 
