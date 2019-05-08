@@ -40,7 +40,6 @@
         </div>
     </div>
 
-
     {!! Form::close() !!}
 
     <script>

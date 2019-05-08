@@ -9,7 +9,7 @@
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" type="text/css">
 
     <script type="text/javascript" src="{{asset('assets/js/jquery-1.11.0.min.js')}}"></script>
-    <script src="https://cdn.ckeditor.com/ckeditor5/12.1.0/classic/ckeditor.js"></script>
+    <script type="text/javascript" src="{{asset('assets/js/ckeditor/ckeditor.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/bootstrap.min.js')}}"></script>
     <script type="text/javascript" src="{{asset('assets/js/bootstrap-filestyle.min.js')}}"></script>
 
