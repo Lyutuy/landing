@@ -30,7 +30,7 @@
     <div class="form-group">
         {!! Form::label('images', 'Изображение:',['class'=>'col-xs-2 control-label']) !!}
         <div class="col-xs-8">
-            {!! Form::file('images', ['class' => 'filestyle','data-buttonText'=>'Выберите изображение','data-buttonName'=>"btn-primary",'data-placeholder'=>"Файла нет"]) !!}
+            {!! Form::file('images', ['class' => 'filestyle','data-buttonText'=>'Выберите изображение','data-buttonName'=>"btn-primary",'data-placeholder'=>"Файла нет..."]) !!}
         </div>
     </div>
 
